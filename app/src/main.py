@@ -18,8 +18,8 @@ import asyncio
 import logging
 import signal
 
+from my_vehicle_model.my_vehicle_model.vehicle import vehicle
 from vapp import VehicleOwnerApp  # type: ignore # noqa: E402
-from vehicle import vehicle  # type: ignore
 from velocitas_sdk.util.log import (  # type: ignore
     get_opentelemetry_log_factory,
     get_opentelemetry_log_format,
@@ -33,9 +33,10 @@ logger = logging.getLogger(__name__)
 
 async def main():
     """Main function"""
+
     logger.info("Starting seat adjuster app...")
-    seat_adjuster_app = VehicleOwnerApp(vehicle)
-    await seat_adjuster_app.run()
+    vehicle_owner_app = VehicleOwnerApp(vehicle)
+    await vehicle_owner_app.run()
 
 
 LOOP = asyncio.get_event_loop()

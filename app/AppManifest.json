@@ -15,7 +15,22 @@
                         {
                             "path": "Vehicle.Speed",
                             "access": "read"
+                        },
+                        {
+                            "path": "Vehicle.Body.Trunk.Rear.IsOpen",
+                            "access": "write"
                         }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "grpc-interface",
+            "config": {
+                "src": "https://raw.githubusercontent.com/Flusinerd/vehicle-services/main/trunk_service/proto/sdv/edge/body/trunk/rear/v1/reartrunk.proto",
+                "required": {
+                    "mathods": [
+                        "SetOpenStatus"
                     ]
                 }
             }
